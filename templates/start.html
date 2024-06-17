@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Linear Regression Simulator</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            margin: 20px;
+            margin-top: 200px;
+            max-width: 450px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .container h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .project-button {
+            background-color: #4CAF50;
+        }
+
+        .about-button {
+            background-color: #008CBA;
+        }
+
+        .icon-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                width: 65%;
+            }
+            .icon-row {
+                display: flex;
+                width: 100%;
+            }
+            .icon-button {
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+            .slider-container {
+                scroll-snap-type: x mandatory;
+                overflow-x: scroll;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Remove scrollbar */
+                -ms-overflow-style: none; /* Remove scrollbar */
+            }
+
+            .icon-button {
+                scroll-snap-align: start;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video src="static/result-space-1.mp4" autoplay muted loop></video>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to Linear Regression Simulator</h1>
+        <p>Where Data meets Analysis</p>
+        <div class="button-row">
+            <a class="button project-button" href="/index">Go-to-Project</a>
+            <a class="button project-button" href="https://github.com/ANUJDWIVDI/ai-mini-proj">View on GitHub</a>
+        </div>
+
+        <span style="font-size: 14px; margin-top: 10px; display: block;">
+            Developed By:
+            <a href="https://projectai.me" style="color: white; font-family: Arial, sans-serif;">@anuj_dwivedi</a>
+        </span>
+    </div>
+</body>
+</html>

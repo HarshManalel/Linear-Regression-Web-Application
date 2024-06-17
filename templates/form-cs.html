@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <style>
+
+        body {
+            background-color: lightgray;
+            color: #ffffff;
+        }
+
+        .navbar-light .navbar-brand {
+            color: #ffffff;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+
+        .box {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .table th, .table td {
+            color: #000000;
+        }
+
+        .form-group label {
+            color: #000000;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        .btn-primary:focus, .btn-primary.focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+        }
+
+        input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        input[type="color"]::-webkit-color-swatch {
+            border: none;
+        }
+
+        ::placeholder {
+            color: #ffffff;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 767.98px) {
+            .dataset-table {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light transparent-bg">
+  <a class="navbar-brand" href="/start">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="https://drive.google.com/file/d/1t6D7JVVLlZOR1MaAi_x10y44sqqtBDnd/view?usp=sharing">Report</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/team">Team Details</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('readme') }}">Readme.md</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="https://projectai.me">Contact Dev</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <a href="{{ url_for('readme') }}" class="btn btn-primary">Readme.md</a>
+            </div>
+        </div>
+        <form method="POST" action="{{ url_for('generate_linear_plots') }}" enctype="multipart/form-data">
+            <div class="row mb-5">
+                <div class="col-md-4 dataset-table">
+                    <div class="box">
+                        <h4>Select a Dataset:</h4>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Dataset Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Existing dataset options -->
+                            <tr>
+                                <td>
+                                    <input type="radio" name="dataset" value="custom" id="custom">
+                                </td>
+                                <td>
+                                    <div class="text-box">Custom Dataset:</div>
+                                </td>
+                            </tr>
+                            <!-- Custom dataset file input -->
+                            <tr id="custom-dataset-row" style="display: none;">
+                                <td>
+                                    <label for="custom-dataset">Upload Dataset File:</label>
+                                </td>
+                                <td>
+                                    <input type="file" name="custom_dataset" id="custom-dataset">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="dataset" value="dataset1" id="dataset1" checked>
+                                </td>
+                                <td>
+                                    <div class="text-box">data.csv</div>
+                                    This dataset provides a concise and descriptive representation of individuals' height and weight measurements, featuring accurate and rounded values in meters and kilograms respectively, enabling analysis of the relationship between these physical attributes.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="dataset" value="dataset4" id="dataset4">
+                                </td>
+                                <td>
+                                    <div class="text-box">Nutrition__Physical_Activity__and_Obesity_-_Behavioral_Risk_Factor_Surveillance_System.csv</div>
+                                    This dataset provides comprehensive information on obesity and weight status, including years, location, data source, class, topic, question, data values, confidence limits, sample size, age, education, gender, income, race/ethnicity, geolocation, and stratification categories, enabling insights into the prevalence of obesity among adults.
+                                </td>
+                            </tr>
+                                                    <tr>
+                            <td><input type="radio" name="dataset" value="dataset5" id="dataset5"></td>
+                            <td><div class="text-box">placement.csv</div> This dataset represents students' CGPA, placement exam marks, and placement status, indicating their academic performance, exam scores, and whether they were successfully placed.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="dataset" value="dataset9" id="dataset9"></td>
+                            <td><div class="text-box">Real estate.csv</div> This dataset includes information on the transaction number, transaction date, house age, distance to the nearest MRT station, number of convenience stores, latitude, longitude, and the house price per unit area.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="dataset" value="dataset10" id="dataset10"></td>
+                            <td><div class="text-box">Salary_dataset.csv</div>
+This dataset contains information on years of experience and corresponding salary amounts, denoted by the columns "YearsExperience" and "Salary" respectively. It enables analysis of the relationship between work experience and salary.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="dataset" value="dataset11" id="dataset11"></td>
+                            <td><div class="text-box">Salary_Data.csv</div> This dataset consists of information on years of experience and corresponding salary amounts, allowing analysis of the relationship between work experience and salary.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="dataset" value="dataset14" id="dataset14"></td>
+                            <td><div class="text-box">winequality-red.csv</div> This dataset comprises various chemical properties of wine, including fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulphates, alcohol content, and quality rating. It allows for analysis and exploration of the relationships between these attributes and the quality of the wine.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="bgColor">Background Color:</label>
+                        <input type="color" id="bgColor" name="bg_color" value="#000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="regLineColor">Regression Line Color:</label>
+                        <input type="color" id="regLineColor" name="reg_line_color" value="#00ff00">
+                    </div>
+                    <div class="form-group">
+                        <label for="outlierColor">Outlier Color:</label>
+                        <input type="color" id="outlierColor" name="outlier_color" value="#ff0000">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="box">
+                            <label for="algoSelect">Select Algorithm:</label>
+                        </div>
+                        <select class="form-control" id="algoSelect" name="algo_type">
+                            <option value="linear_regression" selected>linear-regression</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Generate</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // Page is loaded from the cache (back button clicked)
+            location.reload();
+        }
+    });
+</script>
+    <script>
+        $(document).ready(function() {
+            $('input[name="dataset"]').change(function() {
+                if ($(this).val() === 'custom') {
+                    $('#custom-dataset-row').show();
+                } else {
+                    $('#custom-dataset-row').hide();
+                }
+            });
+
+            $('form').submit(function(e) {
+                var dataset = $('input[name="dataset"]:checked').val();
+                if (dataset === 'custom') {
+                    var fileInput = $('#custom-dataset')[0];
+                    var file = fileInput.files[0];
+                    if (file) {
+                        // Submit the form without AJAX
+                        return true;
+                    } else {
+                        alert('Please select a file or upload one to continue.');
+                        e.preventDefault();  // Prevent form submission
+                    }
+                } else if (!dataset) {
+                    alert('Please select a dataset to continue.');
+                    e.preventDefault();  // Prevent form submission
+                }
+            });
+        });
+    </script>
+</body>
+</html>

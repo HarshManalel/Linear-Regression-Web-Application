@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Add Bootstrap CSS file -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Add custom CSS file -->
+	<style>
+/* Style the feature names section */
+ul {
+	list-style: disc;
+	padding-left: 20px;
+	font-size: 20px;
+	color: #ffffff; /* Full white */
+	font-weight: bold;
+}
+
+/* Style the carousel section */
+.carousel-item img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Style the table section */
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: center;
+	color: #ffffff; /* Full white */
+	font-weight: bold;
+}
+
+th {
+	background-color: #af7ac5; /* Bland violet */
+}
+
+tr:nth-child(even) {
+	background-color: #000000; /* Black */
+	color: #ffffff; /* Full white */
+}
+
+/* Style the page headings */
+h2 {
+	text-align: center;
+	margin-bottom: 50px;
+	color: #ffffff; /* Full white */
+	font-weight: bold;
+}
+
+/* Style the container boxes */
+.container {
+	background-color: rgba(169, 169, 169, 0.5); /* Orange with transparency */
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 30px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the split boxes */
+.split {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.box {
+	flex: 1;
+	padding: 20px;
+	border-radius: 10px;
+	margin: 10px;
+	text-align: center;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.box:nth-child(odd) {
+	background-color: rgba(211, 234, 211, 0.5); /* Light green with transparency */
+}
+
+.box:nth-child(even) {
+	background-color: rgba(200, 230, 255, 0.5); /* Light blue with transparency */
+}
+
+/* Media queries for mobile devices */
+@media screen and (max-width: 768px) {
+	.split {
+		display: block;
+	}
+	.box {
+		margin: 10px auto;
+		max-width: 300px;
+	}
+}
+
+body {
+	position: relative;
+	color: #ffffff; /* Full white */
+}
+
+.video-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	overflow: hidden;
+}
+
+.video-background video {
+	min-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+}
+
+.transparent-bg {
+	background-color: rgba(0, 0, 0, 0.9); /* Adjust the last value (0.2) for the desired transparency (0 to 1) */
+}
+
+.transparent-bg .navbar-collapse {
+	background-color: rgba(0, 0, 0, 0.8); /* Adjust the last value (0.8) for the desired transparency (0 to 1) */
+	color: black; /* Dark brown */
+	font-weight: bold;
+}
+
+
+	</style>
+</head>
+<body>
+	<div class="video-background">
+		<video src="static/result-space-1.mp4" autoplay muted loop></video>
+	</div>
+
+	<div class="container my-5">
+		<nav class="navbar navbar-expand-lg navbar-light transparent-bg">
+			<a class="navbar-brand" href="/start" style="color: #ffffff; font-weight: bold;">Home</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/start" style="color: #ffffff; font-weight: bold;">Start</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/about" style="color: #ffffff; font-weight: bold;">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://drive.google.com/file/d/1t6D7JVVLlZOR1MaAi_x10y44sqqtBDnd/view?usp=sharing" style="color: #ffffff; font-weight: bold;">Report</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/team" style="color: #ffffff; font-weight: bold;">Team Details</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('readme') }}" style="color: #ffffff; font-weight: bold;">Readme.md</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://projectai.me" style="color: #ffffff; font-weight: bold;">Contact Dev</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+<!-- Display the feature names -->
+<div class="container my-5">
+        <h2>Linear Regression:</h2>
+    <p>Linear regression shows the relationship between the dependent variable and the independent variable.</p>
+    <p><br></p>
+    <p>Dependent Variable: {{ dependent_variable }}</p>
+    <p>Independent Variable: {{ independent_variable }}</p>
+</div>
+	<!-- Display a single image -->
+<div class="container my-5">
+    <h2>Regression Plot:</h2>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ url_for('static', filename='plots/'+image_names[0]) }}" alt="Regression Plot">
+            </div>
+        </div>
+    </div>
+</div>
+
+        		<!-- Add the Download button -->
+		<div class="text-center mt-3">
+			<a class="btn btn-primary" href="/download-pdf" target="_blank" style="color: #ffffff; font-weight: bold;">Download PDF</a>
+		</div>
+	</div>
+
+<!-- Display the plot summaries -->
+<div class="container my-5">
+  <h2>Plot Summaries:</h2>
+  {% for summary in plot_summary %}
+  <div class="container my-3">
+    {{ summary|safe }}
+  </div>
+  {% endfor %}
+</div>
+
+
+	<div class="container my-5">
+		<h2>Dataset:</h2>
+		<div class="table-responsive">
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						{% for name in feature_names_a %}
+						<th>{{ name }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+					{{ table_html|safe }}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+    <!-- Add Bootstrap JS file for carousel functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+   <script>
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // Page is loaded from the cache (back button clicked)
+            location.reload();
+        }
+    });
+</script>
+
+</body>
+</html>

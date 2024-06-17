@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error</title>
+	<style>
+		body {
+			background-color: black;
+			color: green;
+			font-family: Arial, sans-serif;
+			font-size: 1.2em;
+		}
+
+		h1 {
+			font-size: 2.5em;
+			margin-top: 50px;
+			margin-bottom: 30px;
+		}
+
+		p {
+			margin-bottom: 30px;
+		}
+
+		button {
+			background-color: green;
+			color: white;
+			border: none;
+			padding: 15px 30px;
+			border-radius: 5px;
+			font-size: 1.2em;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light transparent-bg">
+  <a class="navbar-brand" href="/start">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="https://drive.google.com/file/d/1t6D7JVVLlZOR1MaAi_x10y44sqqtBDnd/view?usp=sharing">Report</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/team">Team Details</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('readme') }}">Readme.md</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="https://projectai.me">Contact Dev</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<h1>Oops, something went wrong!</h1>
+	<p>We're sorry, but an error has occurred. Please try again later.</p>
+	<a href="/static" style="text-decoration: none;"><button>Go back to home page</button></a>
+</body>
+</html>
