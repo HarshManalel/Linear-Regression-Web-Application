@@ -1,54 +1,43 @@
-# 📊 Linear Regression and Outlier Detection Web Application
+# Linear Regression and Outlier Detection
 
-This project presents a web application that combines linear regression and outlier detection techniques to analyze various datasets. The application offers a user-friendly interface for dataset selection, regression parameter customization, and scatter plot generation with regression lines. It also highlights any identified outliers in the plots.
+📊 A web application that implements linear regression and outlier detection techniques on various datasets. It provides a user-friendly interface for selecting datasets, customizing regression parameters, and generating scatter plots with regression lines. The application also highlights any detected outliers in the plots.
 
-## 🚀 Features
+## Features
 
-- **Upload CSV File:** Users can upload their own datasets in CSV format.
-- **Select Relevant Features:** Customize regression parameters, including target and independent variables.
-- **Linear Regression Analysis:** Perform linear regression and visualize relationships between variables.
-- **Outlier Detection:** Identify and highlight outliers using techniques like Z-score and Mahalanobis distance.
-- **Customizable Scatter Plots:** Personalize plot colors for background, regression lines, and outliers.
-- **Downloadable Reports:** Generate and download PDF reports summarizing the analysis.
+🔍 Perform linear regression on multiple datasets  
+📈 Detect and visualize outliers in the scatter plots  
+🎨 Customize plot colors for background, regression line, and outliers  
+📄 Generate a downloadable PDF report summarizing the analysis  
 
-## 🛠️ Technologies Used
+## Technologies Used
 
-- **Front-end:** HTML, CSS, JavaScript, Bootstrap, jQuery
-- **Back-end:** Python, Flask
-- **Libraries:** Pandas, Matplotlib, Scikit-learn, ReportLab
+🐍 Python  
+🌐 Flask (web framework)  
+📊 Matplotlib (plotting library)  
+📊 Pandas (data manipulation library)  
+🤖 Scikit-learn (machine learning library)  
+📄 ReportLab (PDF generation library)  
 
-## 📈 Methodology
+## Installation
 
-1. **Requirement Analysis:**
-   - Identify key functionalities: dataset selection, regression customization, outlier detection, etc.
-   - Design user-friendly and intuitive interface.
+1. Clone the GitHub repository:
+git clone https://github.com/HarshManalel/Linear-Regression-and-Outlier-Detection-Web-Application
 
-2. **Web Application Development:**
-   - Develop back-end with Flask.
-   - Create front-end using HTML, CSS, JavaScript, and Bootstrap.
-   - Implement dynamic content loading and AJAX requests with jQuery.
+### 💻 Architecture
 
-3. **Data Processing and Analysis:**
-   - Utilize Pandas for data manipulation and preprocessing.
-   - Implement data upload functionality for CSV files.
-   - Use Scikit-learn for linear regression analysis and outlier detection.
+The web application is built using Flask, a Python web framework. The user interface is designed using HTML/CSS/JavaScript and the server-side scripts are written in Python. The data processing is done using Pandas, and the machine learning algorithms are implemented using Scikit-learn.
 
-4. **Visualization:**
-   - Generate scatter plots with Matplotlib, highlighting outliers.
-   - Allow users to customize plot colors.
+### 📈 Algorithm
 
-5. **Report Generation:**
-   - Generate PDF reports with ReportLab, summarizing the analysis.
-   - Include dataset details, regression parameters, scatter plots, and outliers.
+The web application implements Linear Regression adn the plots and its colors can be selected by the user . The results are displayed in a scatter plot, which can be downloaded as a PNG file.
 
-## 🏃‍♀️ Getting Started
+### 🌟 Features
 
-### Prerequisites
+- Upload CSV file
+- Select relevant features
+- Choose the number of clusters
+- Download the scatter plot as a PNG file
 
-- Python 3.x
-- Flask
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-- ReportLab
+### 🎨 UI/UX
+
+The user interface is designed using Bootstrap and custom CSS. The application uses jQuery for dynamic content loading and AJAX requests
